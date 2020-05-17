@@ -1,0 +1,24 @@
+{
+  "name": "puppeteer_course_2020",
+  "version": "1.0.0",
+  "description": "Puppeteer Course",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martolyaa/puppeteer_course_2020.git"
+  },
+  "keywords": [
+    "javascript",
+    "qa",
+    "puppeteer"
+  ],
+  "author": "Olga Konovalova",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/martolyaa/puppeteer_course_2020/issues"
+  },
+  "homepage": "https://github.com/martolyaa/puppeteer_course_2020#readme"
+}
