@@ -10,9 +10,8 @@ describe('My first puppeteer test', () => {
         await page.goto('http://example.com/')
         const title = await page.title()
         const url = await page.url()
-        
-        const.log('TITLE: ' + title)
-        const.log('URL: ' + url)
+        const text = await page.$eval('h1', element => element.textContent)
+        console.log('Text tn the H1: ' + text)
         await browser.close()
     })
 })
