@@ -8,6 +8,9 @@ describe('My first puppeteer test', () => {
             slowMo: 100, 
             devtools: false })
         const page = await browser.newPage()
+        await page.setDefaultTimeout(10000)
+        await page.setDefaultNavigationTimeout(20000)
+        
         await page.goto('http://example.com/')
         const title = await page.title()
         const url = await page.url()
