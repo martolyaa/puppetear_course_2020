@@ -9,6 +9,8 @@ describe('My first puppeteer test', () => {
         const page = await browser.newPage()
         await page.goto('http://devexpress.github.io/testcafe/example/')
         await page.type('#developer-name', 'Mike', { delay: 200})
+        await page.waitFor(2000)
+        await page.click('#tried-test-cafe', { clickCount: 1})
         await page.waitFor(5000)
         await browser.close()
     })
