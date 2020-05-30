@@ -11,7 +11,12 @@ describe('My first puppeteer test', () => {
         await page.type('#developer-name', 'Mike', { delay: 200})
         await page.waitFor(2000)
         await page.click('#tried-test-cafe', { clickCount: 1})
-        await page.waitFor(5000)
+        await page.select('#preferred-interface', 'Javascript API')
+        const message = 'Lets fill that message with some text'
+        await page.type('#comments', message)
+        await page.click('#submit-button')
+        await page.waitForSelector('.result-content')
+        await page.waitFor(1000)
         await browser.close()
     })
 })
