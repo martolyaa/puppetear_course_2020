@@ -26,14 +26,14 @@ describe('Device Emulation', () => {
     })
 
     it('Tablet Device Test', async function() {
-        const tablet = puppeteer.devices('iPad landscape')
+        const tablet = puppeteer.devices['iPad landscape']
         await page.emulate(tablet)
         await page.goto('http://www.example.com')
         await page.waitFor(5000)
     })
 
     it('Mobile Device Test', async function() {
-        const mobile = puppeteer.devices('iPhone X')
+        const mobile = puppeteer.devices['iPhone X']
         await page.emulate(mobile)
         await page.goto('http://www.example.com')
         await page.waitFor(5000)
