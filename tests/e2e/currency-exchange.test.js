@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer')
 
-describe('Payment Test', () => {
+describe('Currency Exchange Test', () => {
     let browser
     let package
     
@@ -26,22 +26,20 @@ describe('Payment Test', () => {
         await browser.close()
     })
 
-
-    it('Display Payment Form', async function() {
+    it('Display Currency Form',  async function() {
         await page.waitForSelector('.nav-tabs')
         await page.click('#pay_bills_tab')
-        await page.waitForSelector('.board')
+        await page.waitForSelector('#tabs > ul > li:nth-child(3) > a')
+        await page.click('#tabs > ul > li:nth-child(3) > a')
+        await page.waitForSelector('.board')      
     })
 
-    it('Make Payment', async function() {
-        await page.select('#sp_payee', 'Apple')
-        await page.select('#sp_account', 'Credit Card')
-        await page.type('#sp_amount', '500')
-        await page.type('#sp_date', '2020-06-10')
-        await page.keyboard.press('Enter')
-        await page.type('#sp_description', 'Payment for rent.')
-        await page.click('#pay_saved_payees')
+    it('Exchange Currency',  async function() {
+        await page.select('#pc_currency', 'GBP')
+        await page.type('#pc_amount', '800')
+        await page.click('#pc_inDollars_true')
+        await page.click('#purchase_cash')
         await page.waitForSelector('#alert_content')
     })
-
 })
+    
